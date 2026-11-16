@@ -2,27 +2,41 @@
 
 WPS 云文档连接器（WPS Cloud Document Skill）—— 一个 **SkillHub MCP** 客户端，用于读写金山文档（wps.cn）云端文档、表格、权限与导出。
 
-> 注意：这是 **WPS 云文档技能**，与知识库无关。知识库是另一篇文章/文档内容。
+## English Introduction
 
-## 目录
+This skill provides **WPS cloud document read/write** capabilities via the SkillHub MCP protocol. It is a **WPS Cloud Document Skill** — not a knowledge base.
 
-- `skills/wps-cloud-docs/` — 技能主体（SKILL.md、协议、脚本）
-- `README.md` — 本说明
+Scope
+-----
+- Cloud document storage with permission control
+- Document creation, read, and management
+- Table & document data manipulation
+- Export and sharing with permission control
 
-## 如何使用
+Not a knowledge base
+---------------------
+This is a runtime document skill for automation (document CRUD, tables, permission control, export). It does **not** aggregate articles, store static knowledge, or replace document APIs.
 
-1. 安装/启用技能：`hermes skills list` 可见 `wps-cloud-docs`
-2. 认证：`scripts/wps_auth.py`（token 写入环境变量）
-3. 连接：使用 MCP 客户端连接 `https://mcp-center.wps.cn/skill_hub/mcp`
-4. 查看文档：`skills/wps-cloud-docs/SKILL.md` 含完整用法
+Key features
+-----------
+- SkillHub MCP server: `https://mcp-center.wps.cn/skill_hub/mcp`
+- 638 WPS tools (read, write, sheet, PDF, permission, export)
+- Authentication via `wps_auth.py` (token in env file)
 
-## 发布
+Use
+---
+1. Install: `hermes skills list` (wps-cloud-docs)
+2. Auth: `scripts/wps_auth.py` (env file)
+3. Connect: MCP client -> `https://mcp-center.wps.cn/skill_hub/mcp`
+4. Docs: `skills/wps-cloud-docs/SKILL.md`
 
-- 本地：`hermes skills publish --to github --repo lumz/wps-connector`
-- 官方注册：可提交到 clawhub 或 skills.sh
+Publish
+-------
+- Local: `hermes skills publish --to github --repo lumz/wps-connector`
+- Online: submit to skills.sh / clawhub (manual)
 
-## 注意
-
-- 本技能文件中不含任何密钥/令牌
-- 生产环境请使用环境变量 `${WPS_KDOCS_TOKEN}` 传入
-- 无对应接口的节点标注「无此接口」；文档结构不可随意修改
+Notes
+-----
+- No secrets/keys in skill files
+- Use env variable `${WPS_KDOCS_TOKEN}` in production
+- Nodes without an API are marked "无此流程"; do not modify the document structure
