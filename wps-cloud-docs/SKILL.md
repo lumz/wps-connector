@@ -1,6 +1,6 @@
 ---
 name: wps-cloud-docs
-description: Use when 操作 WPS/金山文档云文档：新建、读改、表格、权限、导出。
+description: Use when 操作 WPS/金山文档云文档：新建、读改、表格、权限、导出。 by Lumz
 version: 1.0.0
 platforms: [macos, linux]
 metadata:
